@@ -1,0 +1,44 @@
+html,
+body {
+    height: 100%;
+    margin: 0
+}
+
+.box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.box .row {
+    border: 1px dotted gray;
+}
+
+.box .row.header {
+    flex: 0 1 auto; /*No grow,shrink, auto base. i.e. Shrink to content.*/
+}
+
+.box .row.content {
+    position: relative;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    flex: 1 1 auto; /*Grow,shrink, auto base. i.e. Use all the space you have.*/
+    background-color: #fff;
+}
+
+.box .row.content .minsize {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    min-height: 600px;
+    min-width: 600px;
+    background-color: #ccc;
+}
+
+.box .row.footer {
+    flex: 0 1 80px; /*No grow, shrink, fixed base. i.e. Use fixed height of 80px, regardless of content.*/;
+    overflow: auto;
+}
